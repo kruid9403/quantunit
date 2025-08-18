@@ -27,6 +27,7 @@ def assert_probs(circuit, expected_probs, shots=1024, tolerance=0.1):
 
     errors = []
     for key, expected in expected_probs.items():
+        print(f"key: {key}, expected probs: {expected}")
         actual = prob_counts.get(key, 0.0)
         if abs(actual - expected) > tolerance:
             errors.append(f"Key {key}: got {actual:.3f}, wanted {expected:.3f} (tolerance {tolerance})")

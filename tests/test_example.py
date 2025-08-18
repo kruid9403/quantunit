@@ -9,7 +9,8 @@ def test_bell_state():
    # Assertion handles measurements
 
    # Bell state: should see'00' and '11' about equally likely
-   expected = {'00':0.5, '11':0.5}
+   #expected = {'00':0.5, '11':0.3, '01':.2} Fails
+   expected = { '00': 0.5, '11':0.5 } # Pass
    assert_probs(qc, expected, shots=1024, tolerance=0.1)
 
 if __name__ == "__main__":
